@@ -30,6 +30,9 @@
                                     <li class="social-icons-linkedin">
                                         <a href="https://www.instagram.com/<?php echo $contact->instagram; ?>" target="_blank" title="Linkedin"><i class="fab fa-instagram" style="color: white;"></i></a>
                                     </li>
+                                    <li class="social-icons-linkedin">
+                                        <a href="<?php echo base_url('admin/home') ?>"><i class="fas fa-sign-in-alt" style="color: white;"></i></a>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -37,6 +40,11 @@
                 </div>
             </div>
         </div>
+        <?php 
+            $CI =& get_instance();
+            $CI->load->model(['BuildingModel']);
+            $buildings = $CI->BuildingModel->get(1)->result();
+        ?>
         <div class="header-container container">
             <div class="header-row">
                 <div class="header-column w-100">
@@ -52,9 +60,17 @@
                                     <ul class="nav nav-pills" id="mainNav">
                                         <li><a href="<?php echo base_url('/') ?>" class="nav-link <?php if ($this->uri->segment(1) == "") {echo "active";} ?>">Home</a></li>
                                         <li><a href="<?php echo base_url('simulation') ?>" class="nav-link <?php if ($this->uri->segment(1) == "simulation") {echo "active";} ?>">Simulation</a></li>
-                                        <li><a href="#wedding_package" class="nav-link <?php if ($this->uri->segment(1) == "wedding_package") {echo "active";} ?>">Wedding Package</a></li>
+                                        <li><a href="<?php echo base_url('home/#wedding_package') ?>" class="nav-link <?php if ($this->uri->segment(1) == "wedding_package") {echo "active";} ?>">Wedding Package</a></li>
                                         <li><a href="<?php echo base_url('invitation') ?>" class="nav-link <?php if ($this->uri->segment(1) == "invitation") {echo "active";} ?>">Invitation</a></li>
-                                        <li><a href="<?php echo base_url('calendar') ?>" class="nav-link <?php if ($this->uri->segment(1) == "calendar") {echo "active";} ?>">Calendar</a></li>
+                                        <!-- <li><a href="<?php echo base_url('calendar') ?>" class="nav-link <?php if ($this->uri->segment(1) == "calendar") {echo "active";} ?>">Calendar</a></li> -->
+                                        <li class="dropdown">
+                                            <a href="demo-auto-services-services.html" class="nav-link dropdown-toggle">Calendar</a>
+                                            <ul class="dropdown-menu">
+                                                <?php foreach ($buildings as $key => $value) { ?>
+                                                    <li><a href="<?php echo base_url('calendar/show/'); echo $value->id; ?>" class="dropdown-item"><?php echo $value->name; ?></a></li>
+                                                <?php } ?>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </nav>
                             </div>

@@ -37,7 +37,7 @@ class WeddingPackageDetailModel extends CI_Model
 
     public function PackageDetail($wedding_package_id)
     {
-        return $this->db->query("SELECT wedding_package_detail.*, feature.name AS feature_name, feature.image as image FROM wedding_package_detail JOIN feature ON wedding_package_detail.feature_id = feature.id WHERE wedding_package_detail.wedding_package_id = $wedding_package_id");
+        return $this->db->query("SELECT wedding_package_detail.*, feature.name AS feature_name, feature.image as image, feature.description as description FROM wedding_package_detail JOIN feature ON wedding_package_detail.feature_id = feature.id WHERE wedding_package_detail.wedding_package_id = $wedding_package_id");
     }
 
     public function destroyAll($wedding_package_id)

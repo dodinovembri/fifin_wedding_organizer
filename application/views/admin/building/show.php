@@ -8,7 +8,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="<?php echo base_url('admin/home') ?>">Home</a></li>
-                    <li class="breadcrumb-item"><a href="<?php echo base_url('admin/event') ?>">Event List</a></li>
+                    <li class="breadcrumb-item"><a href="<?php echo base_url('admin/building') ?>">Building List</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Details</li>
                 </ol>
             </nav>
@@ -37,7 +37,7 @@
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
                                 <div class="field-wrapper">
-                                    <input type="text" name="code" value="<?php echo $event->code ?>" readonly>
+                                    <input type="text" name="code" value="<?php echo $building->code ?>" disabled>
                                     <div class="field-placeholder">Code <span class="text-danger">*</span></div>
                                 </div>
 
@@ -45,39 +45,26 @@
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
                                 <div class="field-wrapper">
-                                    <input type="text" name="name" value="<?php echo $event->title ?>" readonly>
-                                    <div class="field-placeholder">Title <span class="text-danger">*</span></div>
+                                    <input type="text" name="name" value="<?php echo $building->name ?>" disabled>
+                                    <div class="field-placeholder">Name <span class="text-danger">*</span></div>
                                 </div>
 
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
                                 <div class="field-wrapper">
-                                    <input type="text" name="name" value="<?php echo $event->building_id ?>" readonly>
-                                    <div class="field-placeholder">Building <span class="text-danger">*</span></div>
-                                </div>
-
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-
-                                <div class="field-wrapper">
-                                    <input type="date" name="start_date" value="<?php echo $event->start_date ?>" readonly>
-                                    <div class="field-placeholder">Start Date <span class="text-danger">*</span></div>
-                                </div>
-
-                            </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-
-                                <div class="field-wrapper">
-                                    <input type="date" name="end_date" value="<?php echo $event->end_date ?>" readonly>
-                                    <div class="field-placeholder">End Date <span class="text-danger">*</span></div>
+                                    <img src="<?php
+                                                echo base_url('uploads/building/');
+                                                echo $building->image;
+                                                ?>" width="50%" alt="">
+                                    <div class="field-placeholder">Image <span class="text-danger"></span></div>
                                 </div>
 
                             </div>
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
                                 <div class="field-wrapper m-0">
-                                    <textarea name="description" id="" cols="30" rows="7"><?php echo $event->description ?></textarea>
+                                    <textarea name="description" id="" cols="30" rows="7"><?php echo $building->description ?></textarea>
                                     <div class="field-placeholder">Description <span class="text-danger"></span></div>
                                 </div>
 
@@ -86,7 +73,7 @@
 
                                 <!-- Field wrapper start -->
                                 <div class="field-wrapper">
-                                    <input type="text" value="<?php echo check_status($event->status) ?>">
+                                    <input type="text" value="<?php echo check_status($building->status) ?>">
                                     <div class="field-placeholder">Status</div>
                                 </div>
                                 <!-- Field wrapper end -->
@@ -95,7 +82,7 @@
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
                                 <div class="field-wrapper">
-                                    <a href="<?php echo base_url('admin/event') ?>"><button type="submit" class="btn btn-primary">Kembali ke List</button></a>
+                                    <a href="<?php echo base_url('admin/building') ?>"><button type="submit" class="btn btn-primary">Kembali ke List</button></a>
                                 </div>
 
                             </div>

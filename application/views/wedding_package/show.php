@@ -17,12 +17,11 @@
 			<div class="row row-gutter-sm mb-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750">
 				<?php foreach ($wedding_packages as $key => $value) { ?>
 					<div class="col-sm-6 col-lg-3 text-center mb-4 mb-lg-0">
-						<a href="demo-auto-services-services-detail.html" class="text-decoration-none">
+						<a href="void::" class="text-decoration-none">
 							<div class="custom-thumb-info-style-1 thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten">
 								<h3 class="text-transform-none font-weight-bold text-5 mt-2 mb-0"><?php echo $value->feature_name; ?></h3>
-								<div class="thumb-info-wrapper">
-									<img src="<?php echo base_url('uploads/feature/');
-												echo $value->image; ?>" class="img-fluid" alt="">
+								<div class="thumb-info-wrapper"> 
+									<p><?php echo htmlspecialchars_decode($value->description) ?></p>
 								</div>
 							</div>
 						</a>

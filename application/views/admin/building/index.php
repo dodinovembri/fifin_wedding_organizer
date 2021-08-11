@@ -8,7 +8,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="<?php echo base_url('admin/home') ?>">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Event List</li>
+                    <li class="breadcrumb-item active" aria-current="page">Building List</li>
                 </ol>
             </nav>
         </div>
@@ -25,21 +25,19 @@
         <!-- Card start -->
         <div class="card">
             <div class="card-header">
-                <div class="card-title">Event List</div>
+                <div class="card-title">Building List</div>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <?php $this->load->view('admin/components/flash') ?>
-                    <a href="<?php echo base_url('admin/event/create') ?>"><button type="button" class="btn btn-primary" style="margin-bottom: 20px;">Add New</button></a>
+                    <a href="<?php echo base_url('admin/building/create') ?>"><button type="button" class="btn btn-primary" style="margin-bottom: 20px;">Add New</button></a>
                     <table id="basicExample" class="table custom-table">
                         <thead>
                             <tr>
                                 <th>No</th>
                                 <th>Code</th>
-                                <th>Building</th>
-                                <th>Title</th>
-                                <th>Start Date</th>
-                                <th>End Date</th>
+                                <th>Name</th>
+                                <th>Image</th>
                                 <th>Description</th>
                                 <th>Status</th>
                                 <th>Actions</th>
@@ -47,24 +45,22 @@
                         </thead>
                         <tbody>
                             <?php $no = 0;
-                            foreach ($events as $key => $value) {
+                            foreach ($buildings as $key => $value) {
                                 $no++; ?>
                                 <tr>
                                     <td><?php echo $no; ?></td>
                                     <td><?php echo $value->code; ?></td>
-                                    <td><?php echo $value->building_id; ?></td>
-                                    <td><?php echo $value->title; ?></td>
-                                    <td><?php echo $value->start_date; ?></td>
-                                    <td><?php echo $value->end_date; ?></td>
+                                    <td><?php echo $value->name; ?></td>
+                                    <td style="width: 20%;"><img src="<?php echo base_url('uploads/building/'); echo $value->image; ?>" width="50%" alt=""></td>
                                     <td><?php echo substr($value->description, 0, 50) ?></td>
                                     <td><?php echo check_status($value->status); ?></td>
                                     <td>
                                         <a href="<?php
-                                                    echo base_url('admin/event/show/');
+                                                    echo base_url('admin/building/show/');
                                                     echo $value->id;
                                                     ?>"><span class="icon-eye"></span>&nbsp;</a>
                                         <a href="<?php
-                                                    echo base_url('admin/event/edit/');
+                                                    echo base_url('admin/building/edit/');
                                                     echo $value->id;
                                                     ?>"><span class="icon-edit-3"></span></a>
                                         <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $value->id; ?>"><span class="icon-trash"></span></a>
@@ -84,7 +80,7 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                                                 <a href="<?php
-                                                            echo base_url('admin/event/destroy/');
+                                                            echo base_url('admin/building/destroy/');
                                                             echo $value->id;
                                                             ?>"><button type="button" class="btn btn-primary">Delete</button></a>
                                             </div>

@@ -48,7 +48,7 @@
 								<h3><?php echo $value->name; ?></h3>
 							</div>
 							<div class="plan-price">
-								<span class="price"><span class="price-unit">Rp.</span>17</span>
+								<span class="price"><span class="price-unit">Rp.</span><?php echo $value->price ?></span>
 								<label class="price-label">Juta</label>
 							</div>
 							<div class="plan-features">

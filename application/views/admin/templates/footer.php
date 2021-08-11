@@ -1,4 +1,12 @@
 
+	<script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+		
 		<!-- Required jQuery first, then Bootstrap Bundle JS -->
 		<script src="<?php echo base_url('assets/admin/js/jquery.min.js'); ?>"></script>
 		<script src="<?php echo base_url('assets/admin/js/bootstrap.bundle.min.js'); ?>"></script>

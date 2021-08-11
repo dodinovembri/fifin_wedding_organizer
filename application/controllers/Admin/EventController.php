@@ -7,7 +7,7 @@ class EventController extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model(['EventModel']);
+        $this->load->model(['EventModel', 'BuildingModel']);
 
         if ($this->session->userdata('logged_in') != 1) {
             return redirect(base_url('login'));
@@ -25,8 +25,10 @@ class EventController extends CI_Controller
 
     public function create()
     {
+        $data['buildings'] = $this->BuildingModel->get(1)->result();
+
         $this->load->view('admin/templates/header');
-        $this->load->view('admin/event/create');
+        $this->load->view('admin/event/create', $data);
         $this->load->view('admin/templates/footer');
     }
 
@@ -34,6 +36,7 @@ class EventController extends CI_Controller
     {
         $data = array(
             'code'   => $this->input->post('code'),
+            'building_id'   => $this->input->post('building_id'),
             'start_date'   => $this->input->post('start_date'),
             'end_date'   => $this->input->post('end_date'),
             'title'   => $this->input->post('title'),
@@ -58,6 +61,7 @@ class EventController extends CI_Controller
     public function edit($id)
     {
         $data['event'] = $this->EventModel->getById($id)->row();
+        $data['buildings'] = $this->BuildingModel->get(1)->result();
 
         $this->load->view('admin/templates/header');
         $this->load->view('admin/event/edit', $data);
@@ -68,6 +72,7 @@ class EventController extends CI_Controller
     {
         $data = array(
             'code'   => $this->input->post('code'),
+            'building_id'   => $this->input->post('building_id'),
             'start_date'   => $this->input->post('start_date'),
             'end_date'   => $this->input->post('end_date'),
             'title'   => $this->input->post('title'),

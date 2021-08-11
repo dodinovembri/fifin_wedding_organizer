@@ -8,7 +8,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="<?php echo base_url('admin/home') ?>">Home</a></li>
-                    <li class="breadcrumb-item"><a href="<?php echo base_url('admin/feature') ?>">Feature List</a></li>
+                    <li class="breadcrumb-item"><a href="<?php echo base_url('admin/event') ?>">Event List</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Edit</li>
                 </ol>
             </nav>
@@ -35,13 +35,13 @@
                         <h6 class="h-0 m-0">&nbsp;</h6>
                         <div class="row gutters">
                             <form action="<?php
-                                            echo base_url('admin/feature/update/');
-                                            echo $feature->id;
+                                            echo base_url('admin/event/update/');
+                                            echo $event->id;
                                             ?>" method="POST" enctype="multipart/form-data">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
                                     <div class="field-wrapper">
-                                        <input type="text" name="code" value="<?php echo $feature->code ?>" required>
+                                        <input type="text" name="code" value="<?php echo $event->code ?>" required>
                                         <div class="field-placeholder">Code <span class="text-danger">*</span></div>
                                     </div>
 
@@ -49,23 +49,46 @@
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
                                     <div class="field-wrapper">
-                                        <input type="text" name="name" value="<?php echo $feature->name ?>" required>
-                                        <div class="field-placeholder">Name <span class="text-danger">*</span></div>
+                                        <input type="text" name="title" value="<?php echo $event->title ?>" required>
+                                        <div class="field-placeholder">Title <span class="text-danger">*</span></div>
+                                    </div>
+
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+                                    <!-- Field wrapper start -->
+                                    <div class="field-wrapper">
+                                        <select name="building_id" class="form-select" id="formSelect">
+                                            <option value="<?php echo $event->building_id ?>"><?php echo $event->building_id; ?></option>
+                                            <?php foreach ($buildings as $key => $value) { ?>
+                                                <option value="<?php echo $value->id ?>"><?php echo $value->name; ?></option>
+                                            <?php } ?>
+                                        </select>
+                                        <div class="field-placeholder">Building <span class="text-danger">*</span></div>
+                                    </div>
+                                    <!-- Field wrapper end -->
+
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+                                    <div class="field-wrapper">
+                                        <input type="date" name="start_date" value="<?php echo $event->start_date ?>" required>
+                                        <div class="field-placeholder">Start Date <span class="text-danger">*</span></div>
                                     </div>
 
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
                                     <div class="field-wrapper">
-                                        <input type="file" name="image">
-                                        <div class="field-placeholder">Image <span class="text-danger"></span></div>
+                                        <input type="date" name="end_date" value="<?php echo $event->end_date ?>" required>
+                                        <div class="field-placeholder">End Date <span class="text-danger">*</span></div>
                                     </div>
 
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
                                     <div class="field-wrapper m-0">
-                                        <textarea name="description" id="" cols="30" rows="7"><?php echo $feature->description ?></textarea>
+                                        <textarea name="description" id="" cols="30" rows="7"><?php echo $event->description ?></textarea>
                                         <div class="field-placeholder">Description <span class="text-danger"></span></div>
                                     </div>
 
@@ -75,7 +98,7 @@
                                     <!-- Field wrapper start -->
                                     <div class="field-wrapper">
                                         <select name="status" class="form-select" id="formSelect">
-                                            <option value="<?php echo $feature->status ?>"><?php echo check_status($feature->status) ?></option>
+                                            <option value="<?php echo $event->status ?>"><?php echo check_status($event->status) ?></option>
                                             <option value="1">Active</option>
                                             <option value="0">Inactive</option>
                                         </select>
@@ -88,7 +111,7 @@
 
                                     <div class="field-wrapper">
                                         <button type="submit" class="btn btn-primary">Save</button>
-                                        <a href="<?php echo base_url('admin/feature') ?>"><button type="button" class="btn btn-danger">Cancel</button></a>
+                                        <a href="<?php echo base_url('admin/event') ?>"><button type="button" class="btn btn-danger">Cancel</button></a>
                                     </div>
 
                                 </div>

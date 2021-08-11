@@ -53,6 +53,20 @@
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
+                                    <!-- Field wrapper start -->
+                                    <div class="field-wrapper">
+                                        <select name="building_id" class="form-select" id="formSelect">
+                                            <?php foreach ($buildings as $key => $value) { ?>
+                                                <option value="<?php echo $value->id ?>"><?php echo $value->name; ?></option>
+                                            <?php } ?>
+                                        </select>
+                                        <div class="field-placeholder">Building <span class="text-danger">*</span></div>
+                                    </div>
+                                    <!-- Field wrapper end -->
+
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
                                     <div class="field-wrapper">
                                         <input type="date" name="start_date" required>
                                         <div class="field-placeholder">Start Date <span class="text-danger">*</span></div>

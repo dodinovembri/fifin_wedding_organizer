@@ -21,7 +21,7 @@
 					<div class="tab-content">
 
 						<!-- Chat tab -->
-						<div class="tab-pane fade <?php if ($this->uri->segment(2) == "home" || $this->uri->segment(2) == "feature" || $this->uri->segment(2) == "wedding_package" || $this->uri->segment(2) == "clothes" || $this->uri->segment(2) == "decoration" || $this->uri->segment(2) == "wedding_invitation" || $this->uri->segment(2) == "wedding_galleries" || $this->uri->segment(2) == "wedding_gallery" || $this->uri->segment(2) == "event" || $this->uri->segment(2) == "profile"){ echo "show active"; } ?>" id="tab-home" role="tabpanel" aria-labelledby="home-tab">
+						<div class="tab-pane fade <?php if ($this->uri->segment(2) == "home" || $this->uri->segment(2) == "feature" || $this->uri->segment(2) == "wedding_package" || $this->uri->segment(2) == "clothes" || $this->uri->segment(2) == "decoration" || $this->uri->segment(2) == "wedding_invitation" || $this->uri->segment(2) == "wedding_galleries" || $this->uri->segment(2) == "wedding_gallery" || $this->uri->segment(2) == "event" || $this->uri->segment(2) == "profile" || $this->uri->segment(2) == "building"){ echo "show active"; } ?>" id="tab-home" role="tabpanel" aria-labelledby="home-tab">
 
 							<!-- Tab content header start -->
 							<div class="tab-pane-header">
@@ -53,6 +53,9 @@
 										</li>
 										<li>
 											<a href="<?php echo base_url('admin/decoration') ?>" class="<?php if ($this->uri->segment(2) == "decoration"){ echo "current-page"; } ?>">Decoration</a>
+										</li>
+										<li>
+											<a href="<?php echo base_url('admin/building') ?>" class="<?php if ($this->uri->segment(2) == "building"){ echo "current-page"; } ?>">Building</a>
 										</li>
 									</ul>
 								</div>

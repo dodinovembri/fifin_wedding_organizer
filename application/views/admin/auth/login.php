@@ -69,6 +69,7 @@
                                         <div class="field-placeholder">Password</div>
                                     </div>
                                     <div class="actions">
+                                        <a href="<?php echo base_url('/') ?>"><button type="button" class="btn btn-secondary">Home</button></a> &nbsp;
                                         <button type="submit" class="btn btn-primary">Login</button>
                                     </div>
                                 </div>

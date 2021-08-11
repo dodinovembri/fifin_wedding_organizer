@@ -1,8 +1,8 @@
 <?php
 
-class EventModel extends CI_Model
+class BuildingModel extends CI_Model
 {
-    private $_table = "event";
+    private $_table = "building";
 
     public function get($status = NULL)
     {
@@ -12,33 +12,16 @@ class EventModel extends CI_Model
     	return $this->db->get($this->_table);
     }
 
-    public function getDateNow($month, $year)
+    public function getById($id)
     {
         $this->db->where('id', $id);
         return $this->db->get($this->_table);
-    }
-
-    public function getYear()
-    {
-        return $this->db->query("SELECT YEAR(start_date) as year from event");
-    }
+    } 
 
     public function insert($data)
     {
         return $this->db->insert($this->_table, $data);
     }
-
-    public function getById($id)
-    {
-        $this->db->where('id', $id);
-        return $this->db->get($this->_table);
-    }    
-    
-    public function getByBuildingId($id)
-    {
-        $this->db->where('building_id', $id);
-        return $this->db->get($this->_table);
-    }          
 
     public function update($data, $id)
     {
@@ -51,9 +34,5 @@ class EventModel extends CI_Model
         $this->db->where('id', $id);
         return $this->db->delete($this->_table);
     } 
-    
-    public function count()
-    {
-        return $this->db->count_all($this->_table);
-    }    
+          
 }

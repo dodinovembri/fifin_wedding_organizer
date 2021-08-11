@@ -209,3 +209,12 @@ $route['admin/profile'] = 'Admin/ProfileController';
 $route['admin/profile/update/(:any)'] = 'Admin/ProfileController/update/$1';
 $route['admin/profile/setting'] = 'Admin/ProfileController/setting';
 $route['admin/profile/store_pw/(:any)'] = 'Admin/ProfileController/store_pw/$1';
+
+// routes for admin/building
+$route['admin/building'] = 'Admin/BuildingController';
+$route['admin/building/create'] = 'Admin/BuildingController/create';
+$route['admin/building/store'] = 'Admin/BuildingController/store';
+$route['admin/building/edit/(:any)'] = 'Admin/BuildingController/edit/$1';
+$route['admin/building/show/(:any)'] = 'Admin/BuildingController/show/$1';
+$route['admin/building/update/(:any)'] = 'Admin/BuildingController/update/$1';
+$route['admin/building/destroy/(:any)'] = 'Admin/BuildingController/destroy/$1';

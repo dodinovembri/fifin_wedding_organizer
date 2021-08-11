@@ -72,9 +72,9 @@
 					<div class="row">
 						<div class="col">
 
-							<h4 class="mb-0">Calendar Events</h4>
+							<h4 class="mb-0"><?php echo $building->name ?></h4>
 							<p>The thumbnail details can be displayed in different styles.</p>
-							<form action="<?php echo base_url('calendar') ?>" method="post">
+							<form action="<?php echo base_url('calendar/show/'); echo $building->id; ?>" method="post">
 								<input type="hidden" name="search" id="" value="1">
 								<select name="month" id="" class="form-control" style="width: 8%; display:inline-block; margin-left: 3%">
 									<?php

@@ -6,7 +6,7 @@ class CalendarController extends CI_Controller {
     function __construct()
     {
         parent::__construct();
-        $this->load->model(['UserModel', 'ContactModel', 'FeatureModel', 'EventModel']);
+        $this->load->model(['UserModel', 'ContactModel', 'FeatureModel', 'EventModel', 'BuildingModel']);
     }
 
 	public function index()
@@ -50,7 +50,32 @@ class CalendarController extends CI_Controller {
 
     public function show($id)
     {
-        //
+        $search = $this->input->post('search');
+        $month = $this->input->post('month');
+        $year = $this->input->post('year');
+        $date_now = date("d");
+        $data['building'] = $this->BuildingModel->getById($id)->row();
+        $data['years'] = $this->EventModel->getYear()->result();
+
+        if (isset($search)) {
+            $data['search'] = 1;
+            $date = date("$year-$month-$date_now");
+            $data['contact'] = $this->ContactModel->get(1)->row();
+            $data['features'] = $this->FeatureModel->get(1)->result();
+            $data['calendars'] = $this->EventModel->getByBuildingId($id)->result();
+            $data['now'] = $date;
+            $data['month'] = $month;
+            $data['year'] = $year;
+        }else{
+            $data['search'] = 0;
+            $data['contact'] = $this->ContactModel->get(1)->row();
+            $data['features'] = $this->FeatureModel->get(1)->result();
+            $data['calendars'] = $this->EventModel->getByBuildingId($id)->result();
+        }
+
+        $this->load->view('templates/header');
+        $this->load->view('calendar/index', $data);
+        $this->load->view('templates/footer');
     }
 
     public function edit($id)
