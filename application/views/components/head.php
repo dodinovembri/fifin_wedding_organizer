@@ -64,7 +64,7 @@
                                         <li><a href="<?php echo base_url('invitation') ?>" class="nav-link <?php if ($this->uri->segment(1) == "invitation") {echo "active";} ?>">Invitation</a></li>
                                         <!-- <li><a href="<?php echo base_url('calendar') ?>" class="nav-link <?php if ($this->uri->segment(1) == "calendar") {echo "active";} ?>">Calendar</a></li> -->
                                         <li class="dropdown">
-                                            <a href="demo-auto-services-services.html" class="nav-link dropdown-toggle">Calendar</a>
+                                            <a href="void::" class="nav-link dropdown-toggle">Calendar</a>
                                             <ul class="dropdown-menu">
                                                 <?php foreach ($buildings as $key => $value) { ?>
                                                     <li><a href="<?php echo base_url('calendar/show/'); echo $value->id; ?>" class="dropdown-item"><?php echo $value->name; ?></a></li>
