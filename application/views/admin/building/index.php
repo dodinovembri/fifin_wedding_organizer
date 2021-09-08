@@ -37,7 +37,6 @@
                                 <th>No</th>
                                 <th>Code</th>
                                 <th>Name</th>
-                                <th>Image</th>
                                 <th>Description</th>
                                 <th>Status</th>
                                 <th>Actions</th>
@@ -51,7 +50,6 @@
                                     <td><?php echo $no; ?></td>
                                     <td><?php echo $value->code; ?></td>
                                     <td><?php echo $value->name; ?></td>
-                                    <td style="width: 20%;"><img src="<?php echo base_url('uploads/building/'); echo $value->image; ?>" width="50%" alt=""></td>
                                     <td><?php echo substr($value->description, 0, 50) ?></td>
                                     <td><?php echo check_status($value->status); ?></td>
                                     <td>

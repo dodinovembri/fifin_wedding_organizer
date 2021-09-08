@@ -6,7 +6,7 @@
 
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-lg-9 col-xl-8 text-center">
+				<div class="col-lg-12 col-xl-12 text-center">
 					<div class="overflow-hidden">
 						<h2 class="font-weight-bold text-color-dark line-height-1 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="250">Detail Paket</h2> <br>
 					</div>

@@ -24,7 +24,7 @@
                     </li>
                     <li class="pb-1 mb-2">
                         <span class="d-block font-weight-semibold line-height-1 text-color-grey text-3-5">EMAIL</span>
-                        <a href="mailto:<?php echo $contact->email; ?>" class="text-decoration-none font-weight-light text-3-5 text-color-light text-color-hover-default"><span class="__cf_email__" data-cfemail="97faf6fefbd7f2eff6fae7fbf2b9f4f8fa"><?php echo $contact->email; ?></span></a>
+                        <a href="mailto:<?php echo $contact->email; ?>" class="text-decoration-none font-weight-light text-3-5 text-color-light text-color-hover-default"><?php echo $contact->email; ?></span></a>
                     </li>
                 </ul>
             </div>

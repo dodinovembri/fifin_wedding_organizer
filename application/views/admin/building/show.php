@@ -50,17 +50,7 @@
                                 </div>
 
                             </div>
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-
-                                <div class="field-wrapper">
-                                    <img src="<?php
-                                                echo base_url('uploads/building/');
-                                                echo $building->image;
-                                                ?>" width="50%" alt="">
-                                    <div class="field-placeholder">Image <span class="text-danger"></span></div>
-                                </div>
-
-                            </div>
+                           
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
                                 <div class="field-wrapper m-0">

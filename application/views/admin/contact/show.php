@@ -37,7 +37,7 @@
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
                                 <div class="field-wrapper">
-                                    <input type="email" name="email" value="<?php echo $contact->email; ?>" disabled>
+                                    <input type="text" name="email" value="<?php echo $contact->email; ?>" disabled>
                                     <div class="field-placeholder">Email <span class="text-danger"></span></div>
                                 </div>
 
