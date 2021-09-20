@@ -61,6 +61,14 @@
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
+                                    <div class="field-wrapper">
+                                        <input type="text" name="price" required>
+                                        <div class="field-placeholder">Price <span class="text-danger">*</span></div>
+                                    </div>
+
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
                                     <div class="field-wrapper m-0">
                                         <textarea name="description" id="" cols="30" rows="7"></textarea>
                                         <div class="field-placeholder">Description <span class="text-danger"></span></div>

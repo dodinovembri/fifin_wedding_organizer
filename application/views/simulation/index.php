@@ -44,6 +44,49 @@
 						</div>
 
 					</div>
+					<form action="<?php echo base_url('simulation/check_price') ?>" method="post">
+						<div class="row pt-2">
+							<div class="col-lg-3 mt-4 mt-lg-0">
+								<aside class="sidebar">	
+									<h5 class="font-weight-semi-bold">Gedung</h5>
+									<select class="form-select form-control border px-3 py-2 h-auto" name="building_id">
+										<?php foreach ($buildings as $key => $value) { ?>
+											<option value="<?php echo $value->id ?>"><?php echo $value->name ?></option>
+										<?php } ?>
+									</select>
+								</aside>
+							</div>
+
+							<div class="col-lg-3 mt-4 mt-lg-0">
+								<aside class="sidebar">	
+									<h5 class="font-weight-semi-bold">Jumlah Tamu</h5>
+									<input type="text" class="form-control" name="total_guest">
+								</aside>
+							</div>
+
+							<div class="col-lg-2 mt-4 mt-lg-0">
+								<aside class="sidebar">	
+									<h5 class="font-weight-semi-bold">Hitung Harga</h5>
+									<button type="submit" class="form-control">Hitung</button>
+								</aside>
+							</div>
+
+							<div class="col-lg-2 mt-4 mt-lg-0">
+								<aside class="sidebar">	
+									<h5 class="font-weight-semi-bold">Harga</h5>
+									<input type="text" class="form-control" name="price" value="<?php if(isset($total_price)){ echo $total_price; } ?>" readonly>
+								</aside>
+							</div>
+
+							<div class="col-lg-2 mt-4 mt-lg-0">
+								<aside class="sidebar">	
+									<h5 class="font-weight-semi-bold">Order This</h5>
+									<a href="<?php echo base_url('simulation/order') ?>"><button type="button" class="form-control">Order</button></a>
+								</aside>
+							</div>
+						</div>
+					</form>
+					<br><br>
 
 				</div>				
 			</div> 

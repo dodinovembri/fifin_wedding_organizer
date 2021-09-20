@@ -37,6 +37,7 @@
                                 <th>No</th>
                                 <th>Code</th>
                                 <th>Name</th>
+                                <th>Price</th>
                                 <th>Description</th>
                                 <th>Status</th>
                                 <th>Actions</th>
@@ -50,6 +51,7 @@
                                     <td><?php echo $no; ?></td>
                                     <td><?php echo $value->code; ?></td>
                                     <td><?php echo $value->name; ?></td>
+                                    <td><?php echo $value->price; ?></td>
                                     <td><?php echo substr($value->description, 0, 50) ?></td>
                                     <td><?php echo check_status($value->status); ?></td>
                                     <td>

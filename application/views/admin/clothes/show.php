@@ -53,6 +53,14 @@
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
                                 <div class="field-wrapper">
+                                    <input type="text" name="price" value="<?php echo $clothes->price ?>" disabled>
+                                    <div class="field-placeholder">Price <span class="text-danger">*</span></div>
+                                </div>
+
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+                                <div class="field-wrapper">
                                     <img src="<?php
                                                 echo base_url('uploads/clothes/');
                                                 echo $clothes->image;

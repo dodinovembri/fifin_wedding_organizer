@@ -44,6 +44,7 @@ class BuildingController extends CI_Controller
             'code'   => $this->input->post('code'),
             'name'   => $this->input->post('name'),
             'image'   => $this->upload->data('file_name'),
+            'price'   => $this->input->post('price'),
             'description'   => $this->input->post('description'),
             'status'   => $this->input->post('status')
         );
@@ -85,6 +86,7 @@ class BuildingController extends CI_Controller
                 'code'   => $this->input->post('code'),
                 'name'   => $this->input->post('name'),
                 'image'   => $this->upload->data('file_name'),
+                'price'   => $this->input->post('price'),
                 'description'   => $this->input->post('description'),
                 'status'   => $this->input->post('status')
             );
@@ -92,6 +94,7 @@ class BuildingController extends CI_Controller
             $data = array(
                 'code'   => $this->input->post('code'),
                 'name'   => $this->input->post('name'),
+                'price'   => $this->input->post('price'),
                 'description'   => $this->input->post('description'),
                 'status'   => $this->input->post('status')
             );

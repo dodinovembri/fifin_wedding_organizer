@@ -57,6 +57,14 @@
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
                                     <div class="field-wrapper">
+                                        <input type="text" name="price" value="<?php echo $clothes->price ?>" required>
+                                        <div class="field-placeholder">Price <span class="text-danger">*</span></div>
+                                    </div>
+
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+                                    <div class="field-wrapper">
                                         <input type="file" name="image">
                                         <div class="field-placeholder">Image <span class="text-danger"></span></div>
                                     </div>

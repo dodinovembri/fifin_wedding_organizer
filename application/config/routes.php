@@ -56,6 +56,7 @@ $route['translate_uri_dashes'] = FALSE;
 // routes for auth
 
 $route['home'] = 'HomeController';
+$route['register'] = 'RegisterController';
 
 
 // routes for user
@@ -77,6 +78,8 @@ $route['simulation/edit/(:any)'] = 'SimulationController/edit/$1';
 $route['simulation/show/(:any)'] = 'SimulationController/show/$1';
 $route['simulation/update/(:any)'] = 'SimulationController/update/$1';
 $route['simulation/destroy/(:any)'] = 'SimulationController/destroy/$1';
+$route['simulation/check_price'] = 'SimulationController/check_price';
+$route['simulation/order'] = 'SimulationController/order';
 
 // routes for wedding_package
 $route['wedding_package'] = 'WeddingPackageController';
