@@ -18,6 +18,12 @@ class SimulationController extends CI_Controller {
         $data['decoration'] = $this->DecorationModel->get(1)->row();  
         $data['buildings'] = $this->BuildingModel->get(1)->result();
         
+        $simulation_session = array(
+            'decoration_id' =>  $data['decoration']->id,
+            'clothes_id' => $data['clothes']->id
+        );
+        $this->session->set_userdata($simulation_session);
+
         $this->load->view('templates/header');
         $this->load->view('simulation/index', $data);
         $this->load->view('templates/footer');
@@ -81,6 +87,9 @@ class SimulationController extends CI_Controller {
         $clothes_id = $this->session->userdata('clothes_id');
         $building_id = $this->input->post('building_id');
         $total_guest = $this->input->post('total_guest');
+        $start_date = $this->input->post('start_date');
+        $end_date = $this->input->post('end_date');
+        $title = $this->input->post('title');
 
         if (isset($decoration_id)) {
             $decoration = $this->DecorationModel->getById($this->session->userdata('decoration_id'))->row(); 
@@ -109,6 +118,9 @@ class SimulationController extends CI_Controller {
             'clothes_id' => $clothes_id,
             'building_id' => $building->id,
             'total_guest' => $total_guest,
+            'start_date' => $start_date,
+            'end_date' => $end_date,
+            'title' => $title,
             'price' => $total_price
         );
         $this->session->set_userdata($simulation_session);
@@ -120,18 +132,26 @@ class SimulationController extends CI_Controller {
 
     public function order()
     {
-        $data = array(
-            'decoration_id'   => $this->session->userdata('decoration_id'),
-            'clothes_id'   => $this->session->userdata('clothes_id'),
-            'building_id'   => $this->session->userdata('building_id'),
-            'total_guest'   => $this->session->userdata('total_guest'),
-            'price'   => $this->session->userdata('price'),
-            'status'   => 1
-        );
+        if ($this->session->userdata('logged_in') != 2) {
+            return redirect(base_url('customer'));
+        }else{
+            $data = array(
+                'decoration_id'   => $this->session->userdata('decoration_id'),
+                'clothes_id'   => $this->session->userdata('clothes_id'),
+                'building_id'   => $this->session->userdata('building_id'),
+                'total_guest'   => $this->session->userdata('total_guest'),
+                'start_date' => $this->session->userdata('start_date'),
+                'end_date' => $this->session->userdata('end_date'),
+                'title' => $this->session->userdata('title'),
+                'price'   => $this->session->userdata('price'),
+                'status'   => 1
+            );
+    
+            $this->OrderModel->insert($data);
+            $this->session->set_flashdata('success', "Success insert data!");
+            return redirect(base_url('manage'));
+        }
 
-        $this->OrderModel->insert($data);
-        $this->session->set_flashdata('success', "Success insert data!");
-        return redirect(base_url('admin/contact'));
     }
 
     public function create()

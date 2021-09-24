@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2021 at 01:33 AM
+-- Generation Time: Sep 20, 2021 at 03:22 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -178,8 +178,8 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id`, `code`, `building_id`, `start_date`, `end_date`, `title`, `description`, `status`) VALUES
-(1, NULL, 2, '2021-09-27', '2021-09-28', 'Nikah Orang', '', 1),
-(2, NULL, 2, '2021-09-27', '2021-09-28', 'Tacit Knowledge', '', 1);
+(1, 'A11', 3, '2021-08-08', '2021-08-08', 'Pernikahan Eka & Fitri', 'Acara Nikahan', 1),
+(2, 'G2', 1, '2021-08-12', '2021-08-12', 'Pernikahan Dapit dan Santi', '', 1);
 
 -- --------------------------------------------------------
 
@@ -221,25 +221,22 @@ INSERT INTO `feature` (`id`, `code`, `name`, `description`, `status`, `image`) V
 
 CREATE TABLE `order` (
   `id` int(11) NOT NULL,
-  `start_date` date DEFAULT NULL,
-  `end_date` date DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL,
   `decoration_id` int(11) NOT NULL,
   `clothes_id` int(11) NOT NULL,
   `building_id` int(11) NOT NULL,
   `total_guest` int(11) DEFAULT NULL,
   `price` double(18,2) DEFAULT NULL,
-  `status` tinyint(4) DEFAULT 1,
-  `payment_note` varchar(50) DEFAULT NULL
+  `status` tinyint(4) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `order`
 --
 
-INSERT INTO `order` (`id`, `start_date`, `end_date`, `title`, `decoration_id`, `clothes_id`, `building_id`, `total_guest`, `price`, `status`, `payment_note`) VALUES
-(1, '2021-09-27', '2021-09-28', 'Nikah Orang', 1, 1, 2, 12, 603000.00, 2, '614db0463fa4b.jpg'),
-(2, '2021-09-27', '2021-09-28', 'Tacit Knowledge', 1, 1, 2, 10, 503000.00, 2, '614ddfbf15682.png');
+INSERT INTO `order` (`id`, `decoration_id`, `clothes_id`, `building_id`, `total_guest`, `price`, `status`) VALUES
+(1, 1, 1, 9, 300, 15003000.00, 1),
+(2, 1, 1, 2, 300, 15003000.00, 1),
+(3, 1, 1, 8, 300, 15003000.00, 1);
 
 -- --------------------------------------------------------
 
@@ -252,7 +249,6 @@ CREATE TABLE `users` (
   `email` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `role_id` int(11) NOT NULL DEFAULT 1,
   `image` varchar(50) DEFAULT NULL,
   `status` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -261,9 +257,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`, `name`, `role_id`, `image`, `status`) VALUES
-(1, 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'Administrator', 0, '60f44aaa74186.png', 1),
-(2, 'pelanggan@gmail.com', '7f78f06d2d1262a0a222ca9834b15d9d', 'Pelanggan', 1, NULL, 1);
+INSERT INTO `users` (`id`, `email`, `password`, `name`, `image`, `status`) VALUES
+(1, 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'Administrator', '60f44aaa74186.png', 1);
 
 -- --------------------------------------------------------
 
@@ -629,13 +624,13 @@ ALTER TABLE `feature`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `wedding_guest_book`

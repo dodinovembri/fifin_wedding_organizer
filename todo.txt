@@ -1,0 +1,16 @@
+Untuk di halaman simulasi mintak tambah i 
+Kalo kito sdh milih baju sm dekorasi bawahnyo jg tampilke kak pilihan gedung 
+Pilihan untuk beberapo tamu 
+Samo ck paket weding tula tp dijadike cak option jd gek biso milih make baju a, gedung b,tamu sekian gek setelah lah dipilih galo tampil berapo hargo untuk paket yg lah dipilih 
+
+Mintak tambah jd biso mesen secaro online kak jd tambah login untuk costumer yg nk boking jd registrasi dulu kan pasti 
+Nah untuk ngeboking pasti ado pembayaran kan pleng dak agek uplod bukti bayar dk tu kl biso pas dio sdh bayar ado notif apockmn tagihan sudah dibayar cknitu kk tp men susah ysdh upload be bukti bayar 
+
+Terus pas sdh bayar dio lngsng ter integrasi ke jadwal jd pas bayar tgl yg di inginke tu sdh di blok otomatis ck itu kk 
+
+Terus tu pas buka jadwal milih kan misal gedung a 
+Nah ditampilke jugo kk di atas kalender tu kl semisal gedung ini ado pilihan paket apo bae ck itu kk tp sebenernyo yg ini samo be dg yg nk ditampilke di simulasi tadi
+
+Jd kk pemesenan tu di website galo terus admin dk perlu nginput2 lagi 
+
+Itube cknyo kk nk di inget2 dulu apolg be revisi td

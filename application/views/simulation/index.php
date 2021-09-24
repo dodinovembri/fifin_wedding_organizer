@@ -49,7 +49,7 @@
 							<div class="col-lg-3 mt-4 mt-lg-0">
 								<aside class="sidebar">	
 									<h5 class="font-weight-semi-bold">Gedung</h5>
-									<select class="form-select form-control border px-3 py-2 h-auto" name="building_id">
+									<select class="form-select form-control border px-3 py-2 h-auto" name="building_id" required>
 										<?php foreach ($buildings as $key => $value) { ?>
 											<option value="<?php echo $value->id ?>"><?php echo $value->name ?></option>
 										<?php } ?>
@@ -60,25 +60,49 @@
 							<div class="col-lg-3 mt-4 mt-lg-0">
 								<aside class="sidebar">	
 									<h5 class="font-weight-semi-bold">Jumlah Tamu</h5>
-									<input type="text" class="form-control" name="total_guest">
+									<input type="number" class="form-control" name="total_guest" required>
 								</aside>
 							</div>
 
-							<div class="col-lg-2 mt-4 mt-lg-0">
+							<div class="col-lg-3 mt-4 mt-lg-0">
+								<aside class="sidebar">	
+									<h5 class="font-weight-semi-bold">Start Date</h5>
+									<input type="date" class="form-control" name="start_date" required>
+								</aside>
+							</div>
+
+							<div class="col-lg-3 mt-4 mt-lg-0">
+								<aside class="sidebar">	
+									<h5 class="font-weight-semi-bold">End Date</h5>
+									<input type="date" class="form-control" name="end_date" required>
+								</aside>
+							</div>
+						
+						</div>
+						<div class="row pt-2">
+
+							<div class="col-lg-3 mt-4 mt-lg-0">
+								<aside class="sidebar">	
+									<h5 class="font-weight-semi-bold">Title</h5>
+									<input type="text" class="form-control" name="title" required>
+								</aside>
+							</div>
+
+							<div class="col-lg-3 mt-4 mt-lg-0">
 								<aside class="sidebar">	
 									<h5 class="font-weight-semi-bold">Hitung Harga</h5>
 									<button type="submit" class="form-control">Hitung</button>
 								</aside>
 							</div>
 
-							<div class="col-lg-2 mt-4 mt-lg-0">
+							<div class="col-lg-3 mt-4 mt-lg-0">
 								<aside class="sidebar">	
 									<h5 class="font-weight-semi-bold">Harga</h5>
 									<input type="text" class="form-control" name="price" value="<?php if(isset($total_price)){ echo $total_price; } ?>" readonly>
 								</aside>
 							</div>
 
-							<div class="col-lg-2 mt-4 mt-lg-0">
+							<div class="col-lg-3 mt-4 mt-lg-0">
 								<aside class="sidebar">	
 									<h5 class="font-weight-semi-bold">Order This</h5>
 									<a href="<?php echo base_url('simulation/order') ?>"><button type="button" class="form-control">Order</button></a>

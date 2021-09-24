@@ -24,6 +24,9 @@
                                     <li class="social-icons-linkedin">
                                         <a href="<?php echo base_url('register') ?>"><i class="fas fa-user" style="color: white;"></i></a>
                                     </li>
+                                    <li class="social-icons-linkedin">
+                                        <a href="<?php echo base_url('manage') ?>"><i class="fas fa-list" style="color: white;"></i></a>
+                                    </li>
                                     <li class="social-icons-facebook">
                                         <a href="https://www.facebook.com/<?php echo $contact->facebook; ?>" target="_blank" title="Facebook"><i class="fab fa-facebook-f" style="color: white;"></i></a>
                                     </li>

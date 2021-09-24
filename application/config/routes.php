@@ -57,6 +57,15 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['home'] = 'HomeController';
 $route['register'] = 'RegisterController';
+$route['register/store'] = 'RegisterController/store';
+
+
+$route['customer'] = 'CustomerController';
+$route['customer/login'] = 'CustomerController/login';
+
+$route['manage'] = 'ManageController';
+$route['manage/edit/(:any)'] = 'ManageController/edit/$1';
+$route['manage/update/(:any)'] = 'ManageController/update/$1';
 
 
 // routes for user
