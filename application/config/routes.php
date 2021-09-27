@@ -230,3 +230,12 @@ $route['admin/building/edit/(:any)'] = 'Admin/BuildingController/edit/$1';
 $route['admin/building/show/(:any)'] = 'Admin/BuildingController/show/$1';
 $route['admin/building/update/(:any)'] = 'Admin/BuildingController/update/$1';
 $route['admin/building/destroy/(:any)'] = 'Admin/BuildingController/destroy/$1';
+
+// routes for admin/order
+$route['admin/order'] = 'Admin/OrderController';
+$route['admin/order/create'] = 'Admin/OrderController/create';
+$route['admin/order/store'] = 'Admin/OrderController/store';
+$route['admin/order/edit/(:any)'] = 'Admin/OrderController/edit/$1';
+$route['admin/order/show/(:any)'] = 'Admin/OrderController/show/$1';
+$route['admin/order/update/(:any)'] = 'Admin/OrderController/update/$1';
+$route['admin/order/destroy/(:any)'] = 'Admin/OrderController/destroy/$1';

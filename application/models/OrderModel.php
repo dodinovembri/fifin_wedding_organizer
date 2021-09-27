@@ -18,6 +18,12 @@ class OrderModel extends CI_Model
         return $this->db->get($this->_table);
     } 
 
+    public function getByIdCustom($id)
+    {
+        $this->db->where('building_id', $id);
+        return $this->db->get($this->_table);
+    } 
+
     public function insert($data)
     {
         return $this->db->insert($this->_table, $data);

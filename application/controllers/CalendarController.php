@@ -6,7 +6,7 @@ class CalendarController extends CI_Controller {
     function __construct()
     {
         parent::__construct();
-        $this->load->model(['UserModel', 'ContactModel', 'FeatureModel', 'EventModel', 'BuildingModel']);
+        $this->load->model(['UserModel', 'ContactModel', 'FeatureModel', 'EventModel', 'BuildingModel', 'OrderModel']);
     }
 
 	public function index()
@@ -56,6 +56,7 @@ class CalendarController extends CI_Controller {
         $date_now = date("d");
         $data['building'] = $this->BuildingModel->getById($id)->row();
         $data['years'] = $this->EventModel->getYear()->result();
+        $data['orders'] = $this->OrderModel->getByIdCustom($id)->result();
 
         if (isset($search)) {
             $data['search'] = 1;
