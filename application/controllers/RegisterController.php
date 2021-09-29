@@ -49,7 +49,7 @@ class RegisterController extends CI_Controller
 
             $this->UserModel->insert($data);
             $this->session->set_flashdata('success', "User berhasil ditambahkan!");
-            return redirect(base_url('customer/login'));
+            return redirect(base_url('customer'));
         }
     }
 

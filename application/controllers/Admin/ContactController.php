@@ -51,6 +51,7 @@ class ContactController extends CI_Controller
             'about_title'   => $this->input->post('about_title'),
             'about_image'   => $this->upload->data('file_name'),
             'about'   => $this->input->post('about'),
+            'account_number'   => $this->input->post('account_number'),
             'status'   => $this->input->post('status')
         );
 
@@ -98,6 +99,7 @@ class ContactController extends CI_Controller
                 'about_title'   => $this->input->post('about_title'),
                 'about_image'   => $this->upload->data('file_name'),
                 'about'   => $this->input->post('about'),
+                'account_number'   => $this->input->post('account_number'),
                 'status'   => $this->input->post('status')
             );
         }else{
@@ -111,6 +113,7 @@ class ContactController extends CI_Controller
                 'address'   => $this->input->post('address'),
                 'about_title'   => $this->input->post('about_title'),
                 'about'   => $this->input->post('about'),
+                'account_number'   => $this->input->post('account_number'),
                 'status'   => $this->input->post('status')
             );
         }

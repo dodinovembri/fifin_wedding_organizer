@@ -26,6 +26,10 @@
                         <span class="d-block font-weight-semibold line-height-1 text-color-grey text-3-5">EMAIL</span>
                         <a href="mailto:<?php echo $contact->email; ?>" class="text-decoration-none font-weight-light text-3-5 text-color-light text-color-hover-default"><?php echo $contact->email; ?></span></a>
                     </li>
+                    <li class="pb-1 mb-2">
+                        <span class="d-block font-weight-semibold line-height-1 text-color-grey text-3-5">Account Number</span>
+                        <a href="mailto:<?php echo $contact->account_number; ?>" class="text-decoration-none font-weight-light text-3-5 text-color-light text-color-hover-default"><?php echo $contact->account_number; ?></span></a>
+                    </li>
                 </ul>
             </div>
             <div class="col-md-6 col-lg-2 mb-5 mb-md-0">

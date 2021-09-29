@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2021 at 07:23 AM
+-- Generation Time: Sep 29, 2021 at 06:34 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -118,6 +118,7 @@ CREATE TABLE `contact` (
   `about_title` varchar(255) DEFAULT NULL,
   `about_image` varchar(50) DEFAULT NULL,
   `about` text DEFAULT NULL,
+  `account_number` varchar(50) DEFAULT NULL,
   `status` tinyint(4) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -125,8 +126,8 @@ CREATE TABLE `contact` (
 -- Dumping data for table `contact`
 --
 
-INSERT INTO `contact` (`id`, `email`, `facebook`, `twitter`, `instagram`, `phone`, `opening_hours`, `address`, `about_title`, `about_image`, `about`, `status`) VALUES
-(1, 'fifin.weddingorganizer@gmail.com', 'Fifinweddingorganizer(fifin studio)', 'fifin_weddingorganizer', 'fifin.weddingorganizer', '62852-6909-8408', 'Senin-Sabtu: 09.00 s/d 17.00  ', 'Jalan Mayor Zein, Kalidoni, Palembang', 'Twenty Years of Top Experience', '611bcca2377ad.JPG', 'Ya, inilah yang harus kamu lakukan jika kamu sudah berkomitmen dalam pernikahan. Jadilah pernikahan tersebut hal terbahagia selamanya.', 1);
+INSERT INTO `contact` (`id`, `email`, `facebook`, `twitter`, `instagram`, `phone`, `opening_hours`, `address`, `about_title`, `about_image`, `about`, `account_number`, `status`) VALUES
+(1, 'fifin.weddingorganizer@gmail.com', 'Fifinweddingorganizer(fifin studio)', 'fifin_weddingorganizer', 'fifin.weddingorganizer', '62852-6909-8408', 'Senin-Sabtu: 09.00 s/d 17.00  ', 'Jalan Mayor Zein, Kalidoni, Palembang', 'Twenty Years of Top Experience', '611bcca2377ad.JPG', 'Ya, inilah yang harus kamu lakukan jika kamu sudah berkomitmen dalam pernikahan. Jadilah pernikahan tersebut hal terbahagia selamanya.', 'BCA (fifin) 9990-88-4938-3946', 1);
 
 -- --------------------------------------------------------
 
@@ -263,7 +264,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `email`, `password`, `name`, `role_id`, `image`, `status`) VALUES
 (1, 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'Administrator', 0, '60f44aaa74186.png', 1),
-(2, 'pelanggan@gmail.com', '7f78f06d2d1262a0a222ca9834b15d9d', 'Pelanggan', 1, NULL, 1);
+(2, 'pelanggan@gmail.com', '7f78f06d2d1262a0a222ca9834b15d9d', 'Pelanggan', 1, NULL, 1),
+(3, 'test@gmail.com', '098f6bcd4621d373cade4e832627b4f6', 'test', 1, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -635,7 +637,7 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `wedding_guest_book`

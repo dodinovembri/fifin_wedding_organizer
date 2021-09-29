@@ -120,6 +120,14 @@
                                 </div>
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 
+                                    <div class="field-wrapper">
+                                        <input type="text" name="account_number" value="<?php echo $contact->account_number; ?>" required>
+                                        <div class="field-placeholder">Account Number <span class="text-danger">*</span></div>
+                                    </div>
+
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
                                     <!-- Field wrapper start -->
                                     <div class="field-wrapper">
                                         <select name="status" class="form-select" id="formSelect">
