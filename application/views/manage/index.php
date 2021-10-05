@@ -8,6 +8,8 @@
             <table class="table table-responsive">
                 <thead>
                     <td>Order No</td>
+                    <td>Title</td>
+                    <td>Gedung</td>
                     <td>Start Date</td>
                     <td>Total Guest</td>
                     <td>Price</td>
@@ -18,6 +20,12 @@
                     <?php foreach ($orders as $key => $value) { ?>
                         <tr>
                             <td><?php echo $value->id ?></td>
+                            <td><?php echo $value->title ?></td>
+                            <td><?php  $CI = &get_instance();
+                                        $CI->load->model(['BuildingModel']);
+                                        $al = $CI->BuildingModel->getById($value->building_id)->row();
+                                echo $al->name; ?>
+                            </td>
                             <td><?php echo $value->start_date ?></td>
                             <td><?php echo $value->total_guest ?></td>
                             <td>Rp. <?php echo $value->price ?></td>
